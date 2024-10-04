@@ -16,7 +16,6 @@ buttons.forEach((button) => {
   button.addEventListener("click", () => {
     const value = button.innerText;
 
-
     // Operações especiais
     if (value === "=") {
       calculate(); // Função para calcular o resultado
@@ -169,14 +168,17 @@ printButton.addEventListener("click", () => {
   // Exibe o histórico antes de abrir a janela de impressão
   historyDiv.style.display = "block"; // Mostra o histórico antes de imprimir
 
-  window.print(); // Abre o diálogo de impressão do navegador
+  setTimeout(() => {
+    window.print(); // Abre o diálogo de impressão do navegador
 
-  // Aguarda um momento para que o conteúdo seja renderizado corretamente antes de ocultar
-  historyDiv.style.display = "none"; // Esconde o histórico após imprimir
+    setTimeout(() => {
+      // Aguarda um momento para que o conteúdo seja renderizado corretamente antes de ocultar
+      historyDiv.style.display = "none"; // Esconde o histórico após imprimir
+    }, 1000);
+  }, 300);
 });
 
 // Garante que o histórico esteja oculto quando a página for recarregada
 window.onload = () => {
   historyDiv.style.display = "none";
 };
-
