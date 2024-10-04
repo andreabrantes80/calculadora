@@ -98,3 +98,42 @@ body {
     font-size: 0.9rem;
   }
 }
+
+/* Media query para impressão */
+@media print {
+  body {
+    background-color: white; /* Remove qualquer background de cor escura */
+  }
+
+  .history {
+    display: block !important; /* Força a exibição do histórico durante a impressão */
+    max-height: none; /* Remove limite de altura para que todo o conteúdo seja visível */
+    overflow: visible; /* Garante que todo o conteúdo seja exibido */
+  }
+
+  #calc-display {
+    font-size: 1.5rem; /* Reduz o tamanho da fonte para se ajustar na página impressa */
+    height: auto; /* Permite que o display se ajuste ao conteúdo */
+  }
+
+  button.btn,
+  #print-btn {
+    display: none; /* Esconde os botões na impressão para não poluir o layout */
+  }
+
+  .calculator-container {
+    width: 100%; /* Expande o container para usar toda a largura da página na impressão */
+  }
+
+  /* Se necessário, personaliza as fontes ou tamanhos para melhorar a impressão */
+  .history ul li {
+    font-size: 1rem;
+  }
+
+  /* Ajusta margens e espaçamentos para melhor layout em papel */
+  .calculator-container, .history {
+    margin: 0;
+    padding: 10px;
+    box-shadow: none; /* Remove sombras durante impressão */
+  }
+}
