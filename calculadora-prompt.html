@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="calculator">
+      <div class="display">
+        <input type="text" id="calc-display" disabled value="0" />
+      </div>
+      <div class="grid-container">
+        <button class="btn">7</button>
+        <button class="btn">8</button>
+        <button class="btn">9</button>
+        <button class="btn">%</button>
+        <!-- Porcentagem -->
+
+        <button class="btn">4</button>
+        <button class="btn">5</button>
+        <button class="btn">6</button>
+        <button class="btn">^</button>
+        <!-- Exponenciação -->
+
+        <button class="btn">1</button>
+        <button class="btn">2</button>
+        <button class="btn">3</button>
+        <button class="btn">+</button>
+
+        <button class="btn">0</button>
+        <button class="btn">.</button>
+        <button class="btn">C</button>
+        <button class="btn">-</button>
+
+        <div></div>
+        <button class="btn" id="print-btn"><i class="fas fa-print"></i></button>
+        <button class="btn">=</button>
+        <button class="btn">*</button>
+      </div>
+      <!-- Histórico dos últimos 10 cálculos -->
+    </div>
+    <div class="history">
+      <h3>Últimos 10 cálculos:</h3>
+      <ul id="calculation-history"></ul>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

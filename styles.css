@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* background-color: #f5f5f5; */
+    background-image: url(fundo-calc.jpg);
+    font-family: Arial, sans-serif;
+}
+
+.calculator {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.display {
+    margin-bottom: 20px;
+}
+
+#calc-display {
+    width: 100%;
+    height: 50px;
+    font-size: 24px;
+    text-align: right;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #eaeaea;
+    box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.1);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas */
+    gap: 10px; /* Espaçamento entre os botões */
+}
+
+.btn {
+    padding: 20px;
+    font-size: 18px;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #dcdcdc;
+}
+
+@media print {
+  /* Esconde todos os elementos, exceto o histórico */
+  body * {
+    visibility: hidden;
+  }
+
+  /* Torna o histórico visível na impressão */
+  .history, .history * {
+    visibility: visible;
+  }
+
+  /* Ajusta a posição do histórico na página */
+  .history {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .calculator-container {
+    padding: 15px;
+    max-width: 100%;
+  }
+
+  #calc-display {
+    height: 50px;
+    font-size: 1.5rem;
+  }
+
+  button.btn {
+    height: 50px;
+    font-size: 1.2rem;
+  }
+
+  .history {
+    font-size: 0.9rem;
+  }
+}
